@@ -18,8 +18,8 @@ public class App {
             String sql = "INSERT INTO users(name, email) VALUES(?, ?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, "Avrut");
-            ps.setString(2, "avrut@gmail.com");
+            ps.setString(1, "mehak");
+            ps.setString(2, "mehak@gmail.com");
 
             int rows = ps.executeUpdate();
 
