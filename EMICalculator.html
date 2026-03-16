@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LOAN EMI CALCULATOR</title>
+</head>
+<body>
+<div>
+	<h2 style="text-align: center;"><u> LOAN CALCULATOR</u></h2>
+
+	Applicant Name:<intput type = "text" id="applicant">
+	<br>
+	Loan Type:
+			<select id="loanType" onchange="setLoanDetails()">
+				<option value="">Select your loan type</option>
+				<option value="home">Home</option>
+				<option value="car">Car</option>
+				<option value="personal">Personal</option>
+			</select>
+	<br>
+	Intrest Rate(%):<input type = "text" id="intrest" readonly>
+	<br>
+	Loan Amount:<intput type = "number" id="amount">
+	<br>
+	Duration:<intput type = "number" id="duration">
+	<br>
+	<button onclick="calculateEMI()">Calculate EMI</button>
+
+	<div id="emi"></div>
+</div>
+<script>
+function setLoanDetails(){
+	let type = document.getElementById("loanType").value;
+    	let interestField = document.getElementById("interest");
+    	let amountField = document.getElementById("amount");
+    	let durationField = document.getElementById("duration");
+
+    if(type == "home") {
+        interestField.value = "9";
+        amountField.min = 500000;
+        durationField.max = 30;
+    }
+
+    else if(type == "car") {
+        interestField.value = 12;
+        amountField.min = 100000;
+        durationField.max = 7;
+    }
+
+    else if(type == "personal") {
+        interestField.value = 15;
+        amountField.min = 10000;
+        durationField.max = 5;
+    }
+
+}
+</script>
+</body>
+</html>

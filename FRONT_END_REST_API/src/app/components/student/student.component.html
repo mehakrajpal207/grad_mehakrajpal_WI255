@@ -1,0 +1,88 @@
+<h2>Student Management</h2>
+
+<h3>Add Student</h3>
+
+<form (ngSubmit)="addStudent()">
+
+<input
+type="text"
+placeholder="University Reg No"
+name="univRegNo"
+[(ngModel)]="student.univRegNo"
+required>
+
+<input
+type="text"
+placeholder="Name"
+name="name"
+[(ngModel)]="student.name"
+required>
+
+<input
+type="text"
+placeholder="Standard"
+name="standard"
+[(ngModel)]="student.standard">
+
+<input
+type="text"
+placeholder="School"
+name="school"
+[(ngModel)]="student.school">
+
+<select
+name="gender"
+[(ngModel)]="student.gender">
+
+<option value="">Select Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+
+</select>
+
+<input
+type="number"
+placeholder="Percentage"
+name="percentage"
+[(ngModel)]="student.percentage">
+
+<button type="submit">Add Student</button>
+
+</form>
+
+<hr>
+<table border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>RegNo</th>
+<th>Name</th>
+<th>Standard</th>
+<th>School</th>
+<th>Gender</th>
+<th>Percentage</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let s of students">
+
+<td>{{s.id}}</td>
+<td>{{s.univRegNo}}</td>
+<td>{{s.name}}</td>
+<td>{{s.standard}}</td>
+<td>{{s.school}}</td>
+<td>{{s.gender}}</td>
+<td>{{s.percentage}}</td>
+
+<td>
+<button (click)="deleteStudent(s.id)">Delete</button>
+</td>
+
+</tr>
+
+</tbody>
+</table>

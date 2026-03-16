@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: darkolivegreen;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: darkolivegreen;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            display: flex;
+            width: 20%;
+            background-color: wheat;
+            padding: 100px 10px;
+            cursor: pointer;
+            font-weight: bold;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            width: 80%;
+            background-color: antiquewhite;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .container {
+            display: flex;
+            height: 60vh;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Bank</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Our Bank</h1>
+        <p>
+        <h3>Banking at your Doorstep</h3>
+        </p>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div onclick="showSection('home')">HOME</div>
+            <br>
+            <div onclick="showSection('about')">ABOUT US</div>
+            <br>
+            <div onclick="showSection('services')">SERVICES</div>
+            <br>
+            <div onclick="showSection('netbanking')">NETBANKING</div>
+            <br>
+            <div onclick="showSection('contact')">CONTACT US</div>
+            <br>
+        </div>
+        <div class="content">
+            <div id="home" class="section">
+                <h2>Home</h2>
+                <p>Welcome to Our Bank! We are committed to providing you with the best banking experience. Explore our
+                    services and find out how we can help you achieve your financial goals.</p>
+            </div>
+            <div id="about" class="section">
+                <h2>About Us</h2>
+                <p>Our Bank was established in 1995.</p>
+                <p>We serve over 10 million customers worldwide.</p>
+            </div>
+            <div id="services" class="section">
+                <h2>Services</h2>
+                <h3>LOAN APPLICATION</h3>
+                <form>
+                    <input type="text" placeholder="Loan Amount"><br>
+                    <input type="text" placeholder="Loan Type"><br>
+                    <input type="text" placeholder="Duration"><br>
+                    <button type="submit">Apply</button>
+                </form>
+                <h3>ACCOUNT OPENING</h3>
+                <form>
+                    <input type="text" placeholder="Full Name"><br>
+                    <input type="text" placeholder="Email"><br>
+                    <input type="text" placeholder="Phone Number"><br>
+                    <button type="submit">Open Account</button>
+                </form>
+                <h3>DEPOSIT</h3>
+                <form>
+                    <input type="text" placeholder="Account Number"><br>
+                    <input type="text" placeholder="Amount"><br>
+                    <button type="submit">Deposit</button>
+                </form>
+            </div>
+            <div id="netbanking" class="section">
+                <h2>Net Banking</h2>
+                <h3>Login to Your Account</h3>
+                <form>
+                    <input type="text" placeholder="Username"><br>
+                    <input type="password" placeholder="Password"><br>
+                    <button type="submit">Login</button>
+                </form>
+                <h3>Register for Net Banking</h3>
+                <form>
+                    <input type="text" placeholder="Full Name"><br>
+                    <input type="text" placeholder="Email"><br>
+                    <input type="text" placeholder="Phone Number"><br>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div id="contact" class="section">
+                <h2>Contact Us</h2>
+                <p>Phone: 123-456-7890</p>
+                <p>Email:xyz@ourbank.com</p>
+                <p>Address: 123 Main Street, Anytown, USA</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2024 Our Bank. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        showSection('home');
+    </script>
+</body>
+
+</html>
